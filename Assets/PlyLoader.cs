@@ -84,6 +84,7 @@ public class PlyLoader {
             builder.Append((char)b);
           }
           string line = builder.ToString();
+          if (line[line.Length - 1] == '\r') line = line.Split('\r')[0];
           string [] words = line.Split(' ');
           switch (words[0]) {
             case "ply": {
